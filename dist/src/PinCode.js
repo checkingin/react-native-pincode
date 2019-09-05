@@ -28,7 +28,7 @@ class PinCode extends React.PureComponent {
                 changeScreen: false
             });
             this.doShake();
-            await delay_1.default(3000);
+            await delay_1.default(300); // changed from 3000
             this.newAttempt();
         };
         this.newAttempt = async () => {
@@ -329,7 +329,7 @@ class PinCode extends React.PureComponent {
                 ? this.props.styleContainer
                 : styles.container },
             React.createElement(Animate_1.default, { show: true, start: {
-                    opacity: 0,
+                    opacity: 1, // changed from 0
                     colorTitle: this.props.styleColorTitle
                         ? this.props.styleColorTitle
                         : colors_1.colors.grey,
@@ -352,7 +352,7 @@ class PinCode extends React.PureComponent {
                     opacityTitle: [1],
                     timing: { duration: 200, ease: d3_ease_1.easeLinear }
                 }, update: {
-                    opacity: [changeScreen ? 0 : 1],
+                    opacity: [changeScreen ? 1 : 1], // changed from 0 : 1
                     colorTitle: [
                         showError || attemptFailed
                             ? this.props.styleColorTitleError
